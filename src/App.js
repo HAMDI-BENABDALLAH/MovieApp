@@ -1,23 +1,20 @@
+import MovieSearch from './Component/MovieSearch';
 import logo from './logo.svg';
-import './App.css';
+import data from './data'
+import React,{useState} from 'react';
+import Movie from './Component/Movie';
+import Search from './Component/Search';
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+function App(){
 
-function App() {
+const [movie, setMovie] = useState(data)
+
+const [text, setText] = useState("")
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Search text={text} setText={setText}/>
+     <Movie movie={movie.filter(el=>el.nameFilm.includes(text)||el.date.includes(text))}/>
     </div>
   );
 }
