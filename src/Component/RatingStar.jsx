@@ -8,12 +8,16 @@ const RatingStar = ({rating}) => {
 
         if (i<x){
            stars.push(
-           <span style={{color:"gold",cursor:"pointer",fontSize:"22px"}}> 
+          <span 
+           key={i}
+           style={{color:"gold",cursor:"pointer",fontSize:"22px"}}> 
            ★
            </span>
            );
         } else { 
-            stars.push(<span style={{color:"black",cursor:"pointer",fontSize:"22px"}}> 
+            stars.push(<span 
+              key={i}
+            style={{color:"black",cursor:"pointer",fontSize:"22px"}}> 
             ★
             </span>
             );

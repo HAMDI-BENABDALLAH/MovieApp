@@ -1,10 +1,10 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import RatingStar from './RatingStar';
 
 
-const MovieSearch = ({e}) => {
+const MovieSearch = ({e,edit}) => {
   return (
     <div>
     
@@ -13,6 +13,7 @@ const MovieSearch = ({e}) => {
       <Card.Body>
         <Card.Title>{e.nameFilm}</Card.Title>
            <RatingStar rating={e.rating}/>
+
         <Card.Text>
          
           {e.date}
@@ -20,6 +21,7 @@ const MovieSearch = ({e}) => {
         </Card.Text>
         {/* <RatingStar rating={e.rating}/> */}
         <Button variant="primary">Go somewhere</Button>
+        <EditMovie e={movie} edit={edit} />
       </Card.Body>
     </Card>
     </div>
